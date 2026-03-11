@@ -806,14 +806,16 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .ls-tog{text-align:center;margin-top:1rem;font-family:var(--fu);font-size:.53rem;letter-spacing:.8px;color:var(--gr);}
 .ls-tog a{color:var(--gold);cursor:pointer;border-bottom:1px solid rgba(212,170,80,.28);transition:border-color .3s;text-decoration:none;}
 .ls-tog a:hover{border-color:var(--gold);}
-.ls-skip{display:block;text-align:center;margin-top:.75rem;font-family:var(--fu);font-size:.46rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.18);cursor:pointer;background:none;border:none;width:100%;transition:color .3s;}
-.ls-skip:hover{color:rgba(255,255,255,.4);}
+.ls-skip{display:block;text-align:center;margin-top:1rem;font-family:var(--fu);font-size:.64rem;font-weight:700;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.72);cursor:pointer;background:rgba(255,255,255,.08);border:1.5px solid rgba(255,255,255,.3);border-radius:2px;width:100%;padding:.7rem 1rem;transition:all .3s;}
+.ls-skip:hover{color:#fff;background:rgba(255,255,255,.15);border-color:rgba(255,255,255,.55);transform:translateY(-1px);box-shadow:0 4px 14px rgba(0,0,0,.3);}
 .ls-div{display:flex;align-items:center;gap:.7rem;margin:.85rem 0;}
 .ls-div::before,.ls-div::after{content:'';flex:1;height:1px;background:rgba(212,170,80,.09);}
 .ls-div span{font-family:var(--fu);font-size:.42rem;letter-spacing:2px;text-transform:uppercase;color:rgba(255,255,255,.18);}
 .ls-stats{display:flex;justify-content:center;gap:1.4rem;margin-top:1.3rem;padding-top:1rem;border-top:1px solid rgba(212,170,80,.07);}
 .ls-stn{font-family:var(--fd);font-size:.95rem;font-weight:900;color:var(--gold);display:block;line-height:1;}
 .ls-stl{font-family:var(--fu);font-size:.4rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gr);}
+.ls-pcnote{margin-top:1rem;padding:.55rem 1.1rem;background:linear-gradient(135deg,rgba(0,210,80,.1),rgba(0,180,60,.07));border:1.5px solid rgba(0,230,80,.5);border-radius:2px;font-family:var(--fu);font-size:.58rem;font-weight:700;letter-spacing:1.8px;text-transform:uppercase;color:#00E860;text-align:center;text-shadow:0 0 8px rgba(0,210,80,.45);animation:pcGlow 2.2s ease infinite;}
+@keyframes pcGlow{0%,100%{box-shadow:0 0 5px rgba(0,220,80,.15)}50%{box-shadow:0 0 18px rgba(0,220,80,.4),inset 0 0 8px rgba(0,220,80,.1)}}
 /* ═══ DASHBOARD ═══ */
 #dashBtn{position:fixed;top:calc(var(--ub-h) + 8px);right:46px;z-index:9991;display:none;align-items:center;gap:6px;background:linear-gradient(135deg,var(--gd),var(--gold));color:#000;font-family:var(--fu);font-size:.49rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;padding:5px 11px 5px 8px;cursor:pointer;border:none;transition:all .3s;box-shadow:0 2px 12px rgba(212,170,80,.3);}
 #dashBtn.vis{display:flex;}
@@ -858,6 +860,86 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 .dp-lgout{width:100%;margin-top:1.2rem;padding:.65rem;background:rgba(244,67,54,.05);border:1px solid rgba(244,67,54,.16);color:#f55;font-family:var(--fu);font-size:.52rem;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:all .3s;}
 .dp-lgout:hover{background:rgba(244,67,54,.12);}
 
+
+/* ════ REWARDS / REFERRAL TAB ════ */
+.rw-hero{background:linear-gradient(135deg,#1C1200,#2A1C00,#1C1200);border:1px solid rgba(212,170,80,.25);border-radius:3px;padding:1.2rem;margin-bottom:1rem;text-align:center;position:relative;overflow:hidden;}
+.rw-hero::before{content:'';position:absolute;inset:0;background:radial-gradient(ellipse at 50% 0%,rgba(212,170,80,.12) 0%,transparent 70%);pointer-events:none;}
+.rw-bal-label{font-family:var(--fu);font-size:.4rem;letter-spacing:3px;text-transform:uppercase;color:rgba(212,170,80,.6);margin-bottom:.3rem;}
+.rw-bal{font-family:var(--fd);font-size:2.8rem;font-weight:900;color:var(--gold);line-height:1;text-shadow:0 0 30px rgba(212,170,80,.45);}
+.rw-bal span{font-size:1.1rem;vertical-align:super;margin-right:2px;}
+.rw-worth{font-family:var(--fu);font-size:.46rem;letter-spacing:1.5px;color:rgba(255,255,255,.45);margin-top:.3rem;}
+.rw-worth b{color:#4CAF50;}
+.rw-tier{display:inline-flex;align-items:center;gap:5px;background:rgba(212,170,80,.1);border:1px solid rgba(212,170,80,.25);border-radius:20px;padding:.25rem .75rem;margin-top:.6rem;font-family:var(--fu);font-size:.42rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.rw-prog-wrap{margin-top:.8rem;}
+.rw-prog-bar{height:5px;background:rgba(255,255,255,.07);border-radius:10px;overflow:hidden;margin:.3rem 0;}
+.rw-prog-fill{height:100%;background:linear-gradient(90deg,var(--gd),var(--gold),var(--gl));border-radius:10px;transition:width .8s cubic-bezier(.34,1.56,.64,1);}
+.rw-prog-lbl{display:flex;justify-content:space-between;font-family:var(--fu);font-size:.38rem;color:rgba(255,255,255,.3);}
+
+/* Referral Card */
+.rw-ref-card{background:#0E0900;border:1.5px solid rgba(212,170,80,.2);border-radius:3px;padding:1rem;margin-bottom:.85rem;}
+.rw-ref-title{font-family:var(--fu);font-size:.42rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(212,170,80,.6);margin-bottom:.65rem;display:flex;align-items:center;gap:5px;}
+.rw-code-row{display:flex;align-items:center;gap:.5rem;background:#1A1000;border:1px solid rgba(212,170,80,.18);border-radius:2px;padding:.5rem .75rem;}
+.rw-code{font-family:var(--fd);font-size:1.05rem;font-weight:700;color:var(--gold);letter-spacing:2px;flex:1;}
+.rw-copy-btn{background:linear-gradient(135deg,var(--gd),var(--gold));border:none;color:#000;font-family:var(--fu);font-size:.42rem;font-weight:700;letter-spacing:1px;padding:.4rem .8rem;cursor:pointer;border-radius:2px;transition:all .25s;white-space:nowrap;}
+.rw-copy-btn:hover{filter:brightness(1.15);transform:scale(1.05);}
+.rw-copy-btn.copied{background:linear-gradient(135deg,#2e7d32,#4CAF50);color:#fff;}
+.rw-link-row{display:flex;align-items:center;gap:.5rem;margin-top:.5rem;}
+.rw-link-txt{font-family:var(--fu);font-size:.38rem;color:rgba(255,255,255,.3);flex:1;overflow:hidden;text-overflow:ellipsis;white-space:nowrap;background:#1A1000;border:1px solid rgba(255,255,255,.06);padding:.4rem .6rem;border-radius:2px;}
+.rw-share-btn{background:rgba(37,211,102,.15);border:1px solid rgba(37,211,102,.4);color:#25D366;font-family:var(--fu);font-size:.42rem;font-weight:700;letter-spacing:.8px;padding:.4rem .75rem;cursor:pointer;border-radius:2px;transition:all .25s;white-space:nowrap;}
+.rw-share-btn:hover{background:rgba(37,211,102,.25);}
+
+/* How to earn */
+.rw-earn-grid{display:grid;gap:.5rem;margin-bottom:.85rem;}
+.rw-earn-row{display:flex;align-items:center;gap:.75rem;background:#0E0900;border:1px solid rgba(212,170,80,.1);border-radius:3px;padding:.65rem .85rem;transition:border-color .3s;}
+.rw-earn-row:hover{border-color:rgba(212,170,80,.3);}
+.rw-earn-ico{font-size:1.2rem;width:34px;text-align:center;flex-shrink:0;}
+.rw-earn-info{flex:1;}
+.rw-earn-lbl{font-family:var(--fb);font-size:.82rem;color:var(--wd);}
+.rw-earn-sub{font-family:var(--fu);font-size:.38rem;letter-spacing:1px;color:rgba(255,255,255,.3);margin-top:1px;}
+.rw-earn-coins{font-family:var(--fd);font-size:.92rem;font-weight:900;color:var(--gold);text-align:right;flex-shrink:0;}
+.rw-earn-done{opacity:.4;text-decoration:line-through;}
+
+/* Referral history */
+.rw-hist-wrap{margin-bottom:.85rem;}
+.rw-hist-item{display:flex;align-items:center;gap:.65rem;padding:.55rem 0;border-bottom:1px solid rgba(255,255,255,.04);}
+.rw-hist-av{width:30px;height:30px;background:linear-gradient(135deg,var(--gd),var(--gold));border-radius:50%;display:flex;align-items:center;justify-content:center;font-size:.75rem;font-family:var(--fd);font-weight:900;color:#000;flex-shrink:0;}
+.rw-hist-name{font-family:var(--fb);font-size:.8rem;color:var(--wd);flex:1;}
+.rw-hist-date{font-family:var(--fu);font-size:.38rem;color:rgba(255,255,255,.3);}
+.rw-hist-coin{font-family:var(--fd);font-size:.78rem;font-weight:700;color:var(--gold);}
+
+/* Redeem box */
+.rw-redeem-box{background:linear-gradient(135deg,rgba(76,175,80,.08),rgba(56,142,60,.05));border:1.5px solid rgba(76,175,80,.3);border-radius:3px;padding:1rem;text-align:center;}
+.rw-redeem-title{font-family:var(--fu);font-size:.44rem;letter-spacing:2px;text-transform:uppercase;color:#4CAF50;margin-bottom:.4rem;}
+.rw-redeem-txt{font-family:var(--fb);font-size:.8rem;color:rgba(255,255,255,.55);line-height:1.5;}
+.rw-redeem-txt b{color:var(--gold);}
+.rw-free-dish{background:linear-gradient(135deg,rgba(212,170,80,.15),rgba(212,170,80,.08));border:1.5px solid rgba(212,170,80,.4);border-radius:3px;padding:.85rem;margin-top:.75rem;text-align:center;}
+.rw-free-dish-ico{font-size:1.6rem;display:block;margin-bottom:.3rem;}
+.rw-free-dish-txt{font-family:var(--fu);font-size:.44rem;letter-spacing:1.5px;color:var(--gold);}
+
+/* Coin toast / badge in inquiry */
+.fq-coin-row{background:linear-gradient(135deg,rgba(212,170,80,.08),rgba(212,170,80,.04));border:1px solid rgba(212,170,80,.25);border-radius:3px;padding:.75rem 1rem;margin-bottom:1rem;display:flex;align-items:center;gap:.75rem;flex-wrap:wrap;}
+.fq-coin-ico{font-size:1.3rem;}
+.fq-coin-info{flex:1;}
+.fq-coin-title{font-family:var(--fu);font-size:.44rem;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);font-weight:700;}
+.fq-coin-sub{font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.45);margin-top:2px;}
+.fq-coin-use{display:flex;align-items:center;gap:.5rem;background:rgba(212,170,80,.1);border:1px solid rgba(212,170,80,.3);border-radius:2px;padding:.35rem .75rem;cursor:pointer;font-family:var(--fu);font-size:.42rem;letter-spacing:1px;color:var(--gold);transition:all .25s;white-space:nowrap;}
+.fq-coin-use:hover,.fq-coin-use.active{background:rgba(212,170,80,.2);border-color:var(--gold);}
+.fq-coin-use input[type=checkbox]{accent-color:var(--gold);width:14px;height:14px;cursor:pointer;}
+.fq-coin-disc{font-family:var(--fd);font-size:1rem;font-weight:900;color:#4CAF50;text-align:right;flex-shrink:0;}
+.fq-free-badge{display:inline-flex;align-items:center;gap:5px;background:linear-gradient(135deg,var(--gd),var(--gold));border-radius:20px;padding:.3rem .9rem;font-family:var(--fu);font-size:.44rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:#000;animation:badgePulse .9s ease infinite;}
+@keyframes badgePulse{0%,100%{box-shadow:0 0 0 0 rgba(212,170,80,.5)}70%{box-shadow:0 0 0 8px rgba(212,170,80,0)}}
+
+/* Coin animation */
+@keyframes coinPop{0%{transform:translateY(0) scale(1);opacity:1}100%{transform:translateY(-60px) scale(1.4);opacity:0}}
+.coin-float{position:fixed;font-family:var(--fd);font-weight:900;font-size:1.1rem;color:var(--gold);pointer-events:none;z-index:99999;animation:coinPop .9s ease forwards;}
+
+/* Referral invite banner on login */
+.ls-ref-banner{background:linear-gradient(135deg,rgba(212,170,80,.15),rgba(212,170,80,.08));border:1.5px solid rgba(212,170,80,.4);border-radius:3px;padding:.7rem 1rem;margin-bottom:.85rem;text-align:center;display:none;}
+.ls-ref-banner.show{display:block;}
+.ls-ref-banner-ico{font-size:1.3rem;display:block;margin-bottom:.2rem;}
+.ls-ref-banner-txt{font-family:var(--fu);font-size:.48rem;font-weight:700;letter-spacing:1.5px;text-transform:uppercase;color:var(--gold);}
+.ls-ref-banner-sub{font-family:var(--fb);font-size:.78rem;color:rgba(255,255,255,.5);margin-top:3px;}
+
 </style>
 </head>
 <body>
@@ -893,6 +975,7 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
         <div><span class="ls-stn">4.9&#9733;</span><span class="ls-stl">Rating</span></div>
         <div><span class="ls-stn">100%</span><span class="ls-stl">Pure Veg</span></div>
       </div>
+      <div class="ls-pcnote">🖥️&nbsp;&nbsp;BEST EXPERIENCED ON PC / LAPTOP</div>
     </div></div>
   </div>
 </div>
@@ -1561,7 +1644,21 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
             <div class="fr"><div class="fg"><label>Event Date</label><input type="date" id="fD"></div><div class="fg"><label>Expected Guests *</label><select id="fG"><option value="">Guest Count</option><option>50–100</option><option>100–200</option><option>200–500</option><option>500–1000</option><option>1000–2000 Guests</option><option>2000–5000 Guests</option><option>5000+ Guests</option><option>Custom (specify in notes)</option></select></div></div>
             <div class="fg" style="margin-bottom:1rem"><label>Preferred Package</label><select id="fPk"><option value="">Select Package</option><option>Regular – ₹899/plate</option><option>Silver – ₹1099/plate</option><option>Gold – ₹1299/plate</option><option>Diamond – ₹1499/plate</option><option>Platinum – ₹1699/plate</option><option>Custom Package</option></select></div>
             <div class="fg" style="margin-bottom:1.5rem"><label>Additional Requirements</label><textarea id="fM" placeholder="Cuisine preferences, Jain menu, live counters..."></textarea></div>
-            <button class="bg" onclick="submitInquiry()" style="width:100%;text-align:center;display:block">Send Inquiry &amp; Get Quote ✦</button>
+            <div class="fq-coin-row" id="fqCoinRow" style="display:none;">
+              <div class="fq-coin-ico">🪙</div>
+              <div class="fq-coin-info">
+                <div class="fq-coin-title">Your RTC Coins: <span id="fqCoinBal">0</span></div>
+                <div class="fq-coin-sub" id="fqCoinSub">Apply coins for instant discount</div>
+              </div>
+              <label class="fq-coin-use" id="fqCoinUse">
+                <input type="checkbox" id="fqCoinChk" onchange="toggleCoinUse()"> Use Coins
+              </label>
+              <div class="fq-coin-disc" id="fqCoinDisc" style="display:none;"></div>
+            </div>
+            <div id="fqFreeBadge" style="display:none;text-align:center;margin-bottom:1rem;">
+              <span class="fq-free-badge">🍽️ Free Dish Unlocked! Mention in notes below</span>
+            </div>
+                        <button class="bg" onclick="submitInquiry()" style="width:100%;text-align:center;display:block">Send Inquiry &amp; Get Quote ✦</button>
             <p style="text-align:center;margin-top:.65rem;font-family:var(--fu);font-size:.5rem;letter-spacing:1px;color:var(--gr)">✓ Response within 24 hours &nbsp;|&nbsp; ✓ 100% Pure Vegetarian</p>
           </div>
         </div>
@@ -2178,7 +2275,16 @@ function submitInquiry(){
   document.getElementById('fss').style.display='block';
   launchConfetti(80);showToast('✅ Inquiry sent! We will contact you within 24 hours!',6000);
   const msg=encodeURIComponent(`*New RTC Inquiry*\nName: ${n.value}\nPhone: ${p.value}\nEmail: ${document.getElementById('fE').value||'N/A'}\nEvent: ${document.getElementById('fEv').value||'N/A'}\nDate: ${document.getElementById('fD').value||'N/A'}\nGuests: ${document.getElementById('fG').value||'N/A'}\nPackage: ${document.getElementById('fPk').value||'N/A'}\nNotes: ${document.getElementById('fM').value||'None'}`);
-  var _sess=AUTH.sess();if(_sess){AUTH.addBooking({eventType:document.getElementById('fEv').value||'Inquiry',eventDate:document.getElementById('fD').value||'TBD',guests:document.getElementById('fG').value||'TBD',package:document.getElementById('fPk').value||'TBD',notes:document.getElementById('fM').value||''});setTimeout(function(){showToast('✦ Saved to your dashboard!',4500);},3000);}
+  var _sess=AUTH.sess();if(_sess){
+    // Deduct coins if checkbox ticked
+    var chk=document.getElementById('fqCoinChk');
+    var coinsUsed=0;
+    if(chk&&chk.checked){var maxUse=Math.min(500,_sess.coins||0);AUTH.useCoins(maxUse,'💰 Inquiry Discount');coinsUsed=maxUse;if(coinsUsed>0)setTimeout(function(){showToast('🪙 '+coinsUsed+' coins redeemed! ₹'+coinsUsed+' off your booking.',5000);},1500);}
+    AUTH.addBooking({eventType:document.getElementById('fEv').value||'Inquiry',eventDate:document.getElementById('fD').value||'TBD',guests:document.getElementById('fG').value||'TBD',package:document.getElementById('fPk').value||'TBD',notes:document.getElementById('fM').value||''+(coinsUsed?'\n['+coinsUsed+' coins redeemed]':'')});
+    // First inquiry bonus
+    var bks=(_sess.bookings||[]);if(bks.length<=1){AUTH.addCoins(50,'📝 First Inquiry Bonus');setTimeout(function(){showToast('🎉 +50 coins earned for submitting your first inquiry!',5000);coinFloat(window.innerWidth/2,window.innerHeight/2,50);},4000);}
+    setTimeout(function(){showToast('✦ Saved to your dashboard!',4500);},3000);
+  }
   setTimeout(()=>window.open('https://wa.me/919825095714?text='+msg,'_blank'),2000);
 }
 
@@ -2322,7 +2428,8 @@ var AUTH={
     if(pw.length<6)return{ok:false,msg:'Password must be 6+ characters.'};
     if(us.find(function(x){return x.username===u||x.email===e;}))return{ok:false,msg:'Username or email already taken.'};
     var nd=new Date();
-    var user={id:Date.now(),username:u,displayName:un.trim(),email:e,phone:ph||'',password:pw,memberSince:nd.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}),bookings:[],requests:[],payments:[]};
+    var refCode='RTC-'+un.trim().toUpperCase().replace(/[^A-Z0-9]/g,'').slice(0,6)+'-'+Math.floor(1000+Math.random()*9000);
+    var user={id:Date.now(),username:u,displayName:un.trim(),email:e,phone:ph||'',password:pw,memberSince:nd.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'}),bookings:[],requests:[],payments:[],coins:100,refCode:refCode,referrals:[],coinHistory:[{type:'earn',amount:100,desc:'🎁 Welcome Bonus',date:nd.toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})}],referredBy:''};
     us.push(user);this.save(us);this.setSess(user);return{ok:true,user:user};
   },
   login:function(id,pw){
@@ -2345,6 +2452,40 @@ var AUTH={
     data.id=Date.now();data.status='pending';
     data.submittedAt=new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'});
     us[i].bookings.unshift(data);this.save(us);this.setSess(us[i]);
+  },
+  getCoins:function(){
+    var sess=this.sess();if(!sess)return 0;
+    var us=this.users(),u=us.find(function(x){return x.id===sess.id;});
+    return(u&&u.coins)||0;
+  },
+  addCoins:function(amount,desc){
+    var sess=this.sess();if(!sess)return;
+    var us=this.users(),i=us.findIndex(function(u){return u.id===sess.id;});if(i<0)return;
+    if(!us[i].coins)us[i].coins=0;
+    us[i].coins+=amount;
+    if(!us[i].coinHistory)us[i].coinHistory=[];
+    us[i].coinHistory.unshift({type:'earn',amount:amount,desc:desc,date:new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})});
+    this.save(us);this.setSess(us[i]);
+  },
+  useCoins:function(amount,desc){
+    var sess=this.sess();if(!sess)return false;
+    var us=this.users(),i=us.findIndex(function(u){return u.id===sess.id;});if(i<0)return false;
+    if((us[i].coins||0)<amount)return false;
+    us[i].coins-=amount;
+    if(!us[i].coinHistory)us[i].coinHistory=[];
+    us[i].coinHistory.unshift({type:'use',amount:amount,desc:desc,date:new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})});
+    this.save(us);this.setSess(us[i]);return true;
+  },
+  creditReferrer:function(refCode){
+    var us=this.users(),i=us.findIndex(function(u){return u.refCode===refCode;});if(i<0)return;
+    if(!us[i].coins)us[i].coins=0;
+    us[i].coins+=150;
+    if(!us[i].referrals)us[i].referrals=[];
+    var sess=this.sess();
+    us[i].referrals.push({name:sess?sess.displayName:'A friend',date:new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})});
+    if(!us[i].coinHistory)us[i].coinHistory=[];
+    us[i].coinHistory.unshift({type:'earn',amount:150,desc:'👥 Referral Bonus',date:new Date().toLocaleDateString('en-IN',{day:'2-digit',month:'short',year:'numeric'})});
+    this.save(us);
   },
   addRequest:function(data){
     var sess=this.sess();if(!sess)return;
@@ -2419,7 +2560,9 @@ function lsGo(){
       var res=AUTH.register(user,email,phone,pass);
       if(btn){btn.disabled=false;btn.classList.remove('spin');}
       if(!res.ok){_lsErr(res.msg,['lsUser']);return;}
-      _lsSuccess(res.user,'Account Created!');
+      // Credit referrer if came via referral link
+      try{var rp=new URLSearchParams(window.location.search).get('ref')||sessionStorage.getItem('rtcRef');if(rp){AUTH.creditReferrer(rp);var us=AUTH.users(),ri=us.findIndex(function(u){return u.id===res.user.id;});if(ri>=0){us[ri].referredBy=rp;AUTH.save(us);}}}catch(e){}
+      _lsSuccess(res.user,'Account Created! +100 🪙');
     },900);
   }else{
     setTimeout(function(){
@@ -2464,12 +2607,13 @@ function _dashInit(user){
   if(pnm)pnm.textContent=user.displayName||user.username;
   if(psi)psi.textContent='Member since '+user.memberSince;
 }
-function toggleDash(){var p=document.getElementById('dashPanel');if(!p)return;p.classList.toggle('open');if(p.classList.contains('open'))_dashRefresh();}
+function toggleDash(){var p=document.getElementById('dashPanel');if(!p)return;p.classList.toggle('open');if(p.classList.contains('open')){_dashRefresh();setTimeout(_initInquiryCoinRow,200);}}
 function closeDash(){var p=document.getElementById('dashPanel');if(p)p.classList.remove('open');}
 function dpTab(name,btn){
   document.querySelectorAll('.dp-tab').forEach(function(b){b.classList.remove('ac');});
   document.querySelectorAll('.dp-sec').forEach(function(s){s.classList.remove('ac');});
   btn.classList.add('ac');var s=document.getElementById('dp-'+name);if(s)s.classList.add('ac');
+  if(name==='rew')_dashRefresh();
 }
 function _dashRefresh(){
   var user=AUTH.sess();if(!user)return;
@@ -2482,7 +2626,157 @@ function _dashRefresh(){
   if(rEl){var reqs=user.requests||[];rEl.innerHTML=reqs.length?reqs.map(function(r){return'<div class="dp-card"><div class="dp-cw">'+r.submittedAt+'</div><div class="dp-ch">'+(r.type||'Request')+'</div><div class="dp-cd">'+(r.notes||'No notes.')+'</div><span class="dp-badge pend">UNDER REVIEW</span></div>';}).join(''):'<div class="dp-empty"><span class="dp-empty-ico">&#128203;</span>No requests yet.</div>';}
   var payEl=document.getElementById('dp-pay');
   if(payEl){var pays=user.payments||[];payEl.innerHTML=pays.length?pays.map(function(p){return'<div class="dp-pay"><div class="dp-pev">'+(p.eventType||'Event')+'</div><div class="dp-pr"><span>Total</span><span>&#8377;'+(p.total||0).toLocaleString('en-IN')+'</span></div><div class="dp-pr"><span>Paid</span><span style="color:var(--grn)">&#8377;'+(p.paid||0).toLocaleString('en-IN')+'</span></div>'+(p.remaining>0?'<div class="dp-prem">Due: &#8377;'+p.remaining.toLocaleString('en-IN')+'</div><span class="dp-badge pend">PAYMENT DUE</span>':'<span class="dp-badge conf">FULLY PAID</span>')+'</div>';}).join(''):'<div class="dp-empty"><span class="dp-empty-ico">&#128176;</span>No payment records yet.<br>Appears after booking is confirmed.</div>';}
+
+  // ── Rewards tab ──
+  var rewEl=document.getElementById('dp-rew');
+  if(rewEl){
+    var coins=user.coins||0;
+    var maxCoins=500;
+    var pct=Math.min(100,Math.round((coins/maxCoins)*100));
+    // tier
+    var tier=coins>=750?'🏆 Gold Member':coins>=300?'⭐ Silver Member':'🌱 Starter';
+    var nextMile=coins>=750?'MAX':coins>=300?'750 (Free Dish)':'300 (Silver)';
+    var nextAmt=coins>=750?0:coins>=300?750-coins:300-coins;
+    var refs=user.referrals||[];
+    var hist=(user.coinHistory||[]).slice(0,8);
+    var refUrl=window.location.origin+window.location.pathname+'?ref='+(user.refCode||'');
+    rewEl.innerHTML=
+      // Hero balance
+      '<div class="rw-hero">'+
+        '<div class="rw-bal-label">Your RTC Coin Balance</div>'+
+        '<div class="rw-bal"><span>🪙</span><span id="rwBalNum">0</span></div>'+
+        '<div class="rw-worth">= <b>₹'+coins+' discount</b> on your next order</div>'+
+        '<div class="rw-tier">'+tier+'</div>'+
+        (coins<750?'<div class="rw-prog-wrap"><div class="rw-prog-bar"><div class="rw-prog-fill" id="rwProgFill" style="width:0%"></div></div><div class="rw-prog-lbl"><span>'+coins+' coins</span><span>'+nextMile+' ('+nextAmt+' more)</span></div></div>':'<div style="font-family:var(--fu);font-size:.42rem;color:rgba(212,170,80,.6);margin-top:.5rem;letter-spacing:1.5px;">🎉 MAX TIER REACHED</div>')+
+      '</div>'+
+      // Referral card
+      '<div class="rw-ref-card">'+
+        '<div class="rw-ref-title">🔗 Your Referral Code</div>'+
+        '<div class="rw-code-row"><div class="rw-code" id="rwCode">'+(user.refCode||'RTC-????-????')+'</div><button class="rw-copy-btn" onclick="rwCopyCode()" id="rwCopyBtn">Copy Code</button></div>'+
+        '<div class="rw-link-row"><div class="rw-link-txt" id="rwLinkTxt">'+refUrl+'</div><button class="rw-share-btn" onclick="rwShareLink()">💬 Share via WhatsApp</button></div>'+
+        '<div style="font-family:var(--fu);font-size:.39rem;letter-spacing:1px;color:rgba(255,255,255,.25);margin-top:.5rem;">👥 You earn <b style="color:var(--gold)">+150 coins</b> for every friend who registers</div>'+
+      '</div>'+
+      // How to earn
+      '<div class="rw-ref-title" style="font-family:var(--fu);font-size:.42rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(212,170,80,.6);margin-bottom:.5rem;display:flex;align-items:center;gap:5px;">⚡ Ways to Earn Coins</div>'+
+      '<div class="rw-earn-grid">'+
+        _rwEarnRow('🎁','Welcome Bonus','One-time on registration','+100','done')+
+        _rwEarnRow('👥','Refer a Friend','Per successful signup','+150','')+
+        _rwEarnRow('📝','Submit Inquiry','First-ever inquiry','+50',(user.bookings&&user.bookings.length)?'done':'')+
+        _rwEarnRow('⭐','Leave a Review','After event completion','+30','')+
+        _rwEarnRow('📱','Complete Profile','Add phone number','+25',(user.phone?'done':''))+
+      '</div>'+
+      // Referral history
+      '<div class="rw-ref-title" style="font-family:var(--fu);font-size:.42rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(212,170,80,.6);margin-bottom:.3rem;display:flex;align-items:center;gap:5px;">👥 Referral History ('+refs.length+')</div>'+
+      '<div class="rw-hist-wrap">'+
+        (refs.length?refs.map(function(r){return'<div class="rw-hist-item"><div class="rw-hist-av">'+(r.name||'?').charAt(0).toUpperCase()+'</div><div><div class="rw-hist-name">'+(r.name||'Friend')+'</div><div class="rw-hist-date">Joined '+r.date+'</div></div><div class="rw-hist-coin">+150 🪙</div></div>';}).join(''):
+        '<div class="dp-empty" style="padding:1rem"><span class="dp-empty-ico">👥</span>No referrals yet.<br><span style="font-size:.78rem;color:rgba(255,255,255,.3)">Share your code to earn 150 coins per friend!</span></div>')+
+      '</div>'+
+      // Coin history
+      (hist.length?'<div class="rw-ref-title" style="font-family:var(--fu);font-size:.42rem;letter-spacing:2.5px;text-transform:uppercase;color:rgba(212,170,80,.6);margin-bottom:.3rem;display:flex;align-items:center;gap:5px;">📋 Coin History</div>'+
+      '<div class="rw-hist-wrap">'+hist.map(function(h){return'<div class="rw-hist-item"><div class="rw-hist-av" style="'+(h.type==='use'?'background:linear-gradient(135deg,#b71c1c,#e53935)':'')+'">'+(h.type==='use'?'↑':'↓')+'</div><div style="flex:1"><div class="rw-hist-name">'+h.desc+'</div><div class="rw-hist-date">'+h.date+'</div></div><div class="rw-hist-coin" style="'+(h.type==='use'?'color:#ef5350':'')+'">'+(h.type==='use'?'-':'+')+''+h.amount+' 🪙</div></div>';}).join('')+'</div>':'<div></div>')+
+      // Redeem info
+      '<div class="rw-redeem-box">'+
+        '<div class="rw-redeem-title">💰 How to Redeem</div>'+
+        '<div class="rw-redeem-txt">Use your coins when submitting an inquiry.<br><b>1 coin = ₹1 discount · Max ₹500 per order</b></div>'+
+      '</div>'+
+      (coins>=750?'<div class="rw-free-dish" style="margin-top:.75rem"><span class="rw-free-dish-ico">🍽️</span><div class="rw-free-dish-txt">FREE DISH UNLOCKED! Mention it in your inquiry notes.</div></div>':'');
+    // Animate coin counter
+    setTimeout(function(){
+      var el=document.getElementById('rwBalNum');
+      var fill=document.getElementById('rwProgFill');
+      if(el){var start=0,end=coins,dur=900,step=Math.ceil(end/40);var t=setInterval(function(){start+=step;if(start>=end){el.textContent=end;clearInterval(t);}else{el.textContent=start;}},dur/40);}
+      if(fill)setTimeout(function(){fill.style.width=pct+'%';},100);
+    },100);
+  }
+
 }
+
+/* ═══════════════════════════════════════
+   REWARDS HELPER FUNCTIONS
+═══════════════════════════════════════ */
+function _rwEarnRow(ico,title,sub,coins,status){
+  var done=status==='done';
+  return'<div class="rw-earn-row'+(done?' rw-earn-done':'')+'"><div class="rw-earn-ico">'+ico+'</div><div class="rw-earn-info"><div class="rw-earn-lbl">'+title+(done?' ✅':'')+'</div><div class="rw-earn-sub">'+sub+'</div></div><div class="rw-earn-coins">'+coins+' 🪙</div></div>';
+}
+function rwCopyCode(){
+  var code=document.getElementById('rwCode');
+  if(!code)return;
+  try{navigator.clipboard.writeText(code.textContent);}catch(e){var ta=document.createElement('textarea');ta.value=code.textContent;document.body.appendChild(ta);ta.select();document.execCommand('copy');document.body.removeChild(ta);}
+  var btn=document.getElementById('rwCopyBtn');
+  if(btn){btn.textContent='✅ Copied!';btn.classList.add('copied');setTimeout(function(){btn.textContent='Copy Code';btn.classList.remove('copied');},2200);}
+  showToast('✅ Referral code copied!');
+}
+function rwShareLink(){
+  var user=AUTH.sess();if(!user)return;
+  var refUrl=window.location.origin+window.location.pathname+'?ref='+(user.refCode||'');
+  var line1='RTC - Rocco The Catering';
+  var line2='I have been using RTC for my events - incredible vegetarian food! 700+ menu items, 1900+ events served.';
+  var line3='Use my referral link to register & get 100 Welcome Coins (Rs.100 off your first order!):';
+  var line4='India No.1 Luxury Vegetarian Catering';
+  var msg=encodeURIComponent(line1+'\n\n'+line2+'\n\n'+line3+'\n'+refUrl+'\n\n'+line4);
+  window.open('https://wa.me/?text='+msg,'_blank');
+}
+function coinFloat(x,y,amount){
+  var el=document.createElement('div');
+  el.className='coin-float';
+  el.textContent='+'+amount+' 🪙';
+  el.style.cssText='left:'+x+'px;top:'+y+'px;';
+  document.body.appendChild(el);
+  setTimeout(function(){el.remove();},1000);
+}
+function toggleCoinUse(){
+  var sess=AUTH.sess();if(!sess)return;
+  var chk=document.getElementById('fqCoinChk');
+  var disc=document.getElementById('fqCoinDisc');
+  var sub=document.getElementById('fqCoinSub');
+  if(!chk)return;
+  var coins=sess.coins||0;
+  var maxUse=Math.min(500,coins);
+  if(chk.checked){
+    if(disc){disc.style.display='block';disc.textContent='-₹'+maxUse;}
+    if(sub)sub.textContent='Applying '+maxUse+' coins → ₹'+maxUse+' off!';
+  }else{
+    if(disc)disc.style.display='none';
+    if(sub)sub.textContent='Apply coins for instant discount';
+  }
+}
+function _initInquiryCoinRow(){
+  var sess=AUTH.sess();
+  var row=document.getElementById('fqCoinRow');
+  var badge=document.getElementById('fqFreeBadge');
+  if(!row)return;
+  if(sess&&(sess.coins||0)>0){
+    row.style.display='flex';
+    var balEl=document.getElementById('fqCoinBal');
+    if(balEl)balEl.textContent=sess.coins;
+    if(badge&&(sess.coins||0)>=750)badge.style.display='block';
+  }else{
+    row.style.display='none';
+  }
+}
+/* ═══════════════════════════════════════
+   PAGE-LOAD: handle ?ref= banner + init coin row
+═══════════════════════════════════════ */
+(function(){
+  try{
+    var params=new URLSearchParams(window.location.search);
+    var ref=params.get('ref');
+    if(ref){
+      var banner=document.getElementById('lsRefBanner');
+      if(banner)banner.classList.add('show');
+      sessionStorage.setItem('rtcRef',ref);
+    }
+    // Also check sessionStorage (for direct link open)
+    var storedRef=sessionStorage.getItem('rtcRef');
+    if(storedRef&&!ref){
+      var banner2=document.getElementById('lsRefBanner');
+      if(banner2)banner2.classList.add('show');
+    }
+  }catch(e){}
+  // Init inquiry coin row
+  setTimeout(_initInquiryCoinRow, 500);
+})();
+
 (function(){var sess=AUTH.sess();if(sess)_dashInit(sess);})();
 
 </script>
