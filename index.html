@@ -236,6 +236,14 @@ body.hl #c2{width:56px;height:56px;background:rgba(212,170,80,.05)}
 /* ═══ HERO ═══ */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:calc(var(--ub-h) + 65px)}
 .hsl{position:absolute;inset:0}
+  .hero-video{
+    position:absolute;
+    top:0;
+    left:0;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+}
 .hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.07);transition:opacity 2s ease,transform 9s ease}
 .hs.ac{opacity:1;transform:scale(1)}
 .hov{position:absolute;inset:0;background:linear-gradient(135deg,rgba(0,0,0,.85),rgba(0,0,0,.3) 55%,rgba(0,0,0,.65));z-index:1}
@@ -1455,12 +1463,10 @@ footer::before{content:'';position:absolute;top:0;left:50%;transform:translateX(
 <!-- HERO -->
 <section id="hero">
   <div class="hsl">
-    <div class="hs ac" style="background-image:url('https://images.unsplash.com/photo-1585937421612-70a008356fbe?w=1920&q=85')"></div>
-    <div class="hs" style="background-image:url('https://images.unsplash.com/photo-1567337710282-00832b415979?w=1920&q=85')"></div>
-    <div class="hs" style="background-image:url('https://images.unsplash.com/photo-1574294664267-3f0a01c7f9c8?w=1920&q=85')"></div>
-    <div class="hs" style="background-image:url('https://images.unsplash.com/photo-1563379091339-03b21ab4a4f8?w=1920&q=85')"></div>
-    <div class="hs" style="background-image:url('https://images.unsplash.com/photo-1565557623262-b51c2513a641?w=1920&q=85')"></div>
-  </div>
+    <video autoplay muted loop playsinline class="hero-video">
+        <source src="images/rtcadswebsite.mp4" type="video/mp4">
+    </video>
+</div>
   <div class="hov"></div>
   <div class="orb o1"></div><div class="orb o2"></div>
   <div class="hpl">
@@ -2853,8 +2859,7 @@ function startTW(){
 /* ═══════════════════════════════════════
    HERO SLIDER
 ═══════════════════════════════════════ */
-let si=0;const sls=document.querySelectorAll('.hs');
-if(sls.length)setInterval(()=>{sls[si].classList.remove('ac');si=(si+1)%sls.length;sls[si].classList.add('ac');},5500);
+
 
 /* ═══════════════════════════════════════
    PARTICLE CANVAS
