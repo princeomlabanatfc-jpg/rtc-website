@@ -236,13 +236,23 @@ body.hl #c2{width:56px;height:56px;background:rgba(212,170,80,.05)}
 /* ═══ HERO ═══ */
 #hero{position:relative;min-height:100vh;display:flex;align-items:center;justify-content:center;overflow:hidden;padding-top:calc(var(--ub-h) + 65px)}
 .hsl{position:absolute;inset:0}
-  .hero-video{
+.hero-video{
     position:absolute;
     top:0;
     left:0;
     width:100%;
     height:100%;
     object-fit:cover;
+    opacity:0;
+    animation:heroVideoFade 1.2s ease forwards;
+}
+  @keyframes heroVideoFade{
+    from{
+        opacity:0;
+    }
+    to{
+        opacity:1;
+    }
 }
 .hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.07);transition:opacity 2s ease,transform 9s ease}
 .hs.ac{opacity:1;transform:scale(1)}
