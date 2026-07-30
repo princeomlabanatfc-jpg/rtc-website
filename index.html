@@ -244,15 +244,7 @@ body.hl #c2{width:56px;height:56px;background:rgba(212,170,80,.05)}
     height:100%;
     object-fit:cover;
     opacity:0;
-    animation:heroVideoFade 1.2s ease forwards;
-}
-  @keyframes heroVideoFade{
-    from{
-        opacity:0;
-    }
-    to{
-        opacity:1;
-    }
+    transition:opacity 1.2s ease;
 }
 .hs{position:absolute;inset:0;background-size:cover;background-position:center;opacity:0;transform:scale(1.07);transition:opacity 2s ease,transform 9s ease}
 .hs.ac{opacity:1;transform:scale(1)}
