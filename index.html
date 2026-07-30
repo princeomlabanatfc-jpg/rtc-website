@@ -2741,10 +2741,29 @@ function showWelcome(){
 }
 function closeWelcome(){
   const o=document.getElementById('wo');
+
   if(o){
-    playWelcomeSound(); // plays on user click — browser autoplay policy satisfied
-    o.classList.remove('show');
-    sessionStorage.setItem('rtcW','1');
+
+    playWelcomeSound();
+
+    o.style.transition = "opacity .6s ease, transform .6s ease";
+
+    o.style.opacity = "0";
+
+    o.style.transform = "scale(.96)";
+
+    setTimeout(()=>{
+
+      o.classList.remove('show');
+
+      o.style.opacity = "";
+
+      o.style.transform = "";
+
+      sessionStorage.setItem('rtcW','1');
+
+    },600);
+
   }
 }
 
